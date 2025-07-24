@@ -1,5 +1,6 @@
 name: Delete old workflow runs
 on:
+  pull_request:
   workflow_dispatch:
 
 jobs:
@@ -15,3 +16,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ secrets.REPO_TO_EXECUTE_REMOVE }}
           keep_minimum_runs: 3
+          retain_days: 0
